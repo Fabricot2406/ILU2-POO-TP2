@@ -1,5 +1,8 @@
 package frontiere;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -39,5 +42,18 @@ public class Clavier {
 		} while (!(entreeCorrecte && chiffre > 0));
 		return chiffre;
 	}
+	
+    public static String inputOutput(String question) {
+        System.out.println(question);
+	    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	    String returnString = "";
+	    try {
+	        returnString = br.readLine();
+	    }
+	    catch (IOException e){
+	        System.out.println("Error reading in value");
+	    }
+	    return returnString;
+    }
 
 }
